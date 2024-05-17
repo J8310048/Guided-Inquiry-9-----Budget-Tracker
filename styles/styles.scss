@@ -5,10 +5,7 @@
 }
 
 
-
 main {
-    position: relative;
-    margin: 0 20%;
 
     .input {
         display: flex;
@@ -24,6 +21,11 @@ main {
 
     button {
         padding: 1% 5%;
+    }
+
+    .submit-reset {
+        display: flex;
+        flex-direction: row;
     }
 }
 

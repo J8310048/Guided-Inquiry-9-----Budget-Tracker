@@ -18,35 +18,33 @@
 
         <form>
             <table>
-                <tr>
-                    <td>Expenses</td>
-                    <td>Income</td>
-                </tr>
+                <thead>
+                    <tr>
+                        <td>Expenses</td>
+                        <td>Income</td>
+                    </tr>
+                </thead>
                 <!-- below are the input fields for your income/expense description and income/expense amount -->
-                <tr>
-                    <td><input type="text" id="income-description" name="income-description"
-                            placeholder="Name your income">
-                        <input type="text" id="income-number" name="income-number" placeholder="type the amount">
-                    </td>
-                    <td><input type="text" id="expenses-description" name="expenses-description"
-                            placeholder="Name your expense">
-                        <input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">
-                    </td>
-                </tr>
-                <tr>
-                    <td id="add-income" onclick="displayBtn()">Add +</td>
-                    <td id="add-expense" onclick="displayBtn()">Add +</td>
-                </tr>
-                <tr>
-                    <td>Total Expenses: 0</td>
-                    <td>Total Income: 0</td>
-                </tr>
-                <tr>
-                    <td id="total-amount">Total: 0</td>
-                </tr>
+                <tbody id="inputFields">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td id="add-income" onclick="addIncomeInput()">Add +</td>
+                        <td id="add-expense" onclick="addExpenseInput()">Add +</td>
+                    </tr>
+                    <tr>
+                        <td><em>Total Income: 0</em></td>
+                        <td><em>Total Expenses: 0</em></td>
+                    </tr>
+                    <tr>
+                        <td id="total-amount" colspan="2"><strong>Grand Total: 0</strong></td>
+                    </tr>
+                    <tr>
+                        <td><input type="submit" value="Submit"></td>
+                        <td><input type="reset"></td>
+                    </tr>
+                </tfoot>
             </table>
-            <input type="submit" value="Submit">
-            <input type="reset">
         </form>
     </main>
 
