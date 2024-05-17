@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="/styles/styles.css" rel="stylesheet">
+    <title>Budget Tracker</title>
+</head>
+
+<body>
+
+    <header>
+        <h1>Budget Tracker</h1>
+    </header>
+
+    <main>
+
+        <form>
+            <table>
+                <tr>
+                    <td>Expenses</td>
+                    <td>Income</td>
+                </tr>
+                <!-- below are the input fields for your income/expense description and income/expense amount -->
+                <tr>
+                    <td><input type="text" id="income-description" name="income-description"
+                            placeholder="Name your income">
+                        <input type="text" id="income-number" name="income-number" placeholder="type the amount">
+                    </td>
+                    <td><input type="text" id="expenses-description" name="expenses-description"
+                            placeholder="Name your expense">
+                        <input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">
+                    </td>
+                </tr>
+                <tr>
+                    <td id="add-income" onclick="displayBtn()">Add +</td>
+                    <td id="add-expense" onclick="displayBtn()">Add +</td>
+                </tr>
+                <tr>
+                    <td>Total Expenses: 0</td>
+                    <td>Total Income: 0</td>
+                </tr>
+                <tr>
+                    <td id="total-amount">Total: 0</td>
+                </tr>
+            </table>
+            <input type="submit" value="Submit">
+            <input type="reset">
+        </form>
+    </main>
+
+    <footer>&copy; copyright 2024 </footer>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
