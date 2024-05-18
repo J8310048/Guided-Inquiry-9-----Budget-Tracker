@@ -25,9 +25,12 @@ function addExpenseInput() {
         <input type="text" id="expenses-description" name="expenses-description"
         placeholder="Name your expense">
     <input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">`
+    // newCell.style = (<i class="material-icons" style="font-size:48px;color:red">delete</i>)
     newRow.appendChild(newCell)
     inputFields.appendChild(newRow)
 }
+
+
 
 
 
