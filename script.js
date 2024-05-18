@@ -2,11 +2,11 @@
 const inputFields = document.getElementById("inputFields")
 
 
-//I'm confirming if the html elements are inside the variables
-console.log(inputFields)
+//I'm confirming if the html elements are inside the inputFields variable
+console.log(inputFields);
 
 
-//below is a function that will repeat
+//below is a function that will add income cells
 function addIncomeInput() {
     var newRow = document.createElement('tr');
     var newCell = document.createElement('td');
@@ -18,6 +18,7 @@ function addIncomeInput() {
     inputFields.appendChild(newRow)
 }
 
+//below is a function that will add expense cells
 function addExpenseInput() {
     var newRow = document.createElement('tr');
     var newCell = document.createElement('td');
@@ -62,12 +63,30 @@ class Budget {
         }
     }
 }
-//below are test runs to see if they work
+//below I created different instances as test runs to see if the Budget class works properly
 let mayBudget = new Budget(10000, 500)
 let decemberBudget = new Budget(29554, 5000)
 let januaryBudget = new Budget(5, 500)
 let augustBudget = new Budget()
 console.log(mayBudget.grandTotal());
 console.log(decemberBudget.grandTotal());
-console.log(januaryBudget.inputValidation());
-console.log(augustBudget.inputValidation());
+// console.log(januaryBudget.inputValidation());
+// console.log(augustBudget.inputValidation());
+
+//below I created an one instance 
+let totalAmount = new Budget();
+
+//
+const incomeAmount = totalAmount.income;
+const expenseAmount = totalAmount.expense;
+const grandTotalAmount = incomeAmount - expenseAmount;
+
+//below the code will update the all the total displays from the user's input
+const incomeTotal = document.getElementById("incomeTotal").textContent = incomeAmount;
+const expenseTotal = document.getElementById("expenseTotal").textContent = expenseAmount;
+const grandTotal = document.getElementById("grandTotal").textContent = grandTotalAmount;
+
+//below I'm verifying if the numbers are zero
+console.log(incomeTotal);
+console.log(expenseTotal);
+console.log(grandTotalAmount);
