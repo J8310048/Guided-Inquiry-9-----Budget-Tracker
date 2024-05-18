@@ -17,7 +17,7 @@
 
     <main>
 
-        <form>
+        <form id="budgetForm" onsubmit="preventFormReset(event)">
             <table>
                 <thead>
                     <tr>
@@ -35,14 +35,14 @@
                     </tr>
                     <tr>
                         <td id="incomeTotal"><em>Total Income: 0</em></td>
-                        <td id="expenseTotal"><em>Total Expenses: 0</em></td>
+                        <td id="expenseTotal"><em>Total Expense: 0</em></td>
                     </tr>
                     <tr>
                         <td id="grandTotal" colspan="2"><strong>Grand Total: 0</strong></td>
                     </tr>
                     <tr>
                         <td><input type="submit" value="Submit"></td>
-                        <td><input type="reset"></td>
+                        <td><input type="reset" id="resetButton" onclick="resetTotals()"></td>
                     </tr>
                 </tfoot>
             </table>
