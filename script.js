@@ -68,8 +68,8 @@ function updateData() {
     const grandTotalAmount = budget.grandTotal();
 
     //below the code will update the all the total displays from the user's input while rounding to the second decimal number
-    document.getElementById("incomeTotal").innerHTML = `<em>Total Income: ${Math.round(incomeAmount * 10)}</em>`;
-    document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: ${Math.round(expenseAmount * 10)}</em>`;
+    document.getElementById("incomeTotal").innerHTML = `<em>Total Income: ${incomeAmount}</em>`;
+    document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: ${expenseAmount}</em>`;
     document.getElementById("grandTotal").innerHTML = `<strong>Grand Total: ${Math.round(grandTotalAmount * 100) / 100}</strong>`;
 
 
