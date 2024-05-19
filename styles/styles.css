@@ -4,11 +4,23 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+html {
+  background-image: linear-gradient(#FFFAE6, #FF9F66, #FF5F00);
+  background-repeat: no-repeat;
+  padding: 10% 0;
+}
+
 body {
   display: flex;
   justify-content: center;
   flex-direction: column;
   align-items: center;
+  color: #002379;
+}
+body main {
+  border: 1px solid white;
+  margin: 5% 0;
+  background-image: linear-gradient(rgba(255, 94, 0, 0.6941176471), #ff863f);
 }
 body .input {
   display: flex;
@@ -20,6 +32,18 @@ body input {
   padding: 1% 10%;
   margin: 2% 0;
 }
+body #submitButton {
+  background-color: #2b62f7;
+}
+body #submitButton:hover {
+  background-color: #7395f2;
+}
+body #resetButton {
+  background-color: #d3dcec;
+}
+body #resetButton:hover {
+  background-color: #5a5f67;
+}
 body #resetButton,
 body #submitButton {
   padding: 5% 20%;
@@ -30,14 +54,30 @@ body .submit-reset {
   display: flex;
   flex-direction: row;
 }
+body #add-income:hover {
+  background-color: #d3dcec;
+}
+body #add-income:active {
+  background-color: #5a5f67;
+}
+body #add-expense:hover {
+  background-color: #d3dcec;
+}
+body #add-expense:active {
+  background-color: #5a5f67;
+}
 
 table {
   min-height: 100%;
   min-width: 100%;
 }
 table td {
-  border: 1px solid black;
+  border: 1px solid white;
   border-radius: 5px;
   text-align: center;
   padding: 5%;
+}
+table input {
+  border-radius: 10px;
+  border: none;
 }/*# sourceMappingURL=styles.css.map */

@@ -4,30 +4,51 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-$background-color1: #0026fd44;
-$background-color2: #f8fdf5;
+$primaryColor: #002379;
+$secondaryColor: #f8fdf5;
 $submit-button-color1: #2b62f7;
 $submit-button-color2: #7395f2;
 $reset-button-color1: #d3dcec;
 $reset-button-color2: #5a5f67;
 
-@mixin animations {}
-
-@mixin hoverEffect {
-    background-color: $submit-button-color2;
-}
 
 @mixin flexRow {
     display: flex;
     flex-direction: row;
 }
 
-
-body {
+@mixin flexColumn {
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
+}
+
+@mixin gradient {
+    background-image: linear-gradient(#FFFAE6, #FF9F66, #FF5F00);
+    background-repeat: no-repeat
+}
+
+@mixin buttonStyle {
+    padding: 5% 20%;
+    border-radius: 40px;
+    border: 1px solid black;
+}
+
+html {
+    @include gradient();
+    padding: 10% 0;
+}
+
+body {
+    @include flexColumn();
+    color: $primaryColor;
+
+    main {
+        border: 1px solid white;
+        margin: 5% 0;
+        background-image: linear-gradient(#ff5e00b1, #ff863f);
+    }
 
     .input {
         @include flexRow();
@@ -40,16 +61,46 @@ body {
         margin: 2% 0;
     }
 
+    #submitButton {
+        background-color: $submit-button-color1;
+    }
+
+    #submitButton:hover {
+        background-color: $submit-button-color2;
+    }
+
+    #resetButton {
+        background-color: $reset-button-color1;
+    }
+
+    #resetButton:hover {
+        background-color: $reset-button-color2;
+    }
+
 
     #resetButton,
     #submitButton {
-        padding: 5% 20%;
-        border-radius: 40px;
-        border: 1px solid black;
+        @include buttonStyle();
     }
 
     .submit-reset {
         @include flexRow();
+    }
+
+    #add-income:hover {
+        background-color: $reset-button-color1;
+    }
+
+    #add-income:active {
+        background-color: $reset-button-color2;
+    }
+
+    #add-expense:hover {
+        background-color: $reset-button-color1;
+    }
+
+    #add-expense:active {
+        background-color: $reset-button-color2;
     }
 }
 
@@ -59,10 +110,15 @@ table {
 
 
     td {
-        border: 1px solid black;
+        border: 1px solid white;
         border-radius: 5px;
         text-align: center;
         padding: 5%;
+    }
+
+    input {
+        border-radius: 10px;
+        border: none;
     }
 
 

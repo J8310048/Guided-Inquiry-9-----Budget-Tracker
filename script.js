@@ -64,10 +64,11 @@ function updateData() {
     //this calculates income minus expenses
     const grandTotalAmount = budget.grandTotal();
 
-    //below the code will update the all the total displays from the user's input
-    document.getElementById("incomeTotal").innerHTML = `<em>Total Income: ${incomeAmount}</em>`;
-    document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: ${expenseAmount}</em>`;
-    document.getElementById("grandTotal").innerHTML = `<strong>Grand Total: ${grandTotalAmount}</strong>`;
+    //below the code will update the all the total displays from the user's input while rounding to the second decimal number
+    document.getElementById("incomeTotal").innerHTML = `<em>Total Income: ${Math.round(incomeAmount * 100)}</em>`;
+    document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: ${Math.round(expenseAmount * 100)}</em>`;
+    document.getElementById("grandTotal").innerHTML = `<strong>Grand Total: ${Math.round(grandTotalAmount * 100) / 100}</strong>`;
+
 
 
 }
@@ -78,13 +79,6 @@ function resetTotals() {
     document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: 0</em>`;
     document.getElementById("grandTotal").innerHTML = `<strong>Grand Total: 0</strong>`;
 }
-
-
-//here I'm targeting the table body so I can add input fields with both Add+ buttons
-const inputFields = document.getElementById("inputFields")
-
-//I'm confirming if the html elements are inside the inputFields variable
-console.log(inputFields);
 
 // below is a function that will add income cells
 function addIncomeInput() {
