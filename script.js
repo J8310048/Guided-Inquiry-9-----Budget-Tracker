@@ -65,9 +65,9 @@ function updateData() {
     const grandTotalAmount = budget.grandTotal();
 
     //below the code will update the all the total displays from the user's input
-    document.getElementById("incomeTotal").textContent = `Total Income: ${incomeAmount}`;
-    document.getElementById("expenseTotal").textContent = `Total Expense: ${expenseAmount}`;
-    document.getElementById("grandTotal").textContent = `Grand Total: ${grandTotalAmount}`;
+    document.getElementById("incomeTotal").innerHTML = `<em>Total Income: ${incomeAmount}</em>`;
+    document.getElementById("expenseTotal").innerHTML = `<em>Total Expense: ${expenseAmount}</em>`;
+    document.getElementById("grandTotal").innerHTML = `<strong>Grand Total: ${grandTotalAmount}</strong>`;
 
 
 }
@@ -88,24 +88,28 @@ console.log(inputFields);
 
 // below is a function that will add income cells
 function addIncomeInput() {
-    var currentRow = document.getElementById('currentRow');
+    var incomeTable = document.getElementById('incomeTable');
+    const newRow = document.createElement('tr');
     var incomeCell = document.createElement('td');
     incomeCell.innerHTML =
         `<input type="text" id="income-description" name="income-description"
                             placeholder="Name your income">
                         <input type="text" id="income-number" name="income-number" placeholder="type the amount">`
-    currentRow.appendChild(incomeCell)
+    newRow.appendChild(incomeCell);
+    incomeTable.appendChild(newRow)
 }
 
 //below is a function that will add expense cells
 function addExpenseInput() {
-    var currentRow = document.getElementById('currentRow');
+    var expenseTable = document.getElementById('expenseTable');
+    const newRow = document.createElement('tr');
     var expenseCell = document.createElement('td');
     expenseCell.innerHTML = `
     <input type="text" id="expenses-description" name="expenses-description"
     placeholder="Name your expense">
 <input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">`;
-    currentRow.appendChild(expenseCell)
+    newRow.appendChild(expenseCell);
+    expenseTable.appendChild(newRow)
 }
 
 
