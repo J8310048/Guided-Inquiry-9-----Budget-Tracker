@@ -36,6 +36,7 @@ class Budget {
 function preventFormReset(event) {
     event.preventDefault();
     updateData();
+    Budget.inputValidation();
 }
 
 //this will link to my submit button. Whenever values are inputted, javascript will receive them as strings. So below I added a for loop that will parse/convert each entry into a number using parseFloat. Float means any number with a decimal or a super long number, but when put next to parse, will help convert all entries into numbers. 
@@ -54,13 +55,21 @@ function updateData() {
         expenseAmount += parseFloat(expenseInputs[i].value) || 0;
     }
 
+    // Create a new instance of Budget class
+    let budget = new Budget(incomeAmount, expenseAmount);
+
+    // Call inputValidation method
+    budget.inputValidation();
+
     //this calculates income minus expenses
-    const grandTotalAmount = incomeAmount - expenseAmount;
+    const grandTotalAmount = budget.grandTotal();
 
     //below the code will update the all the total displays from the user's input
     document.getElementById("incomeTotal").textContent = `Total Income: ${incomeAmount}`;
     document.getElementById("expenseTotal").textContent = `Total Expense: ${expenseAmount}`;
     document.getElementById("grandTotal").textContent = `Grand Total: ${grandTotalAmount}`;
+
+
 }
 
 // below I'm defining the reset button to reset the form before submitting and reset the values on the display after submitting
