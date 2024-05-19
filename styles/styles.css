@@ -22,16 +22,6 @@ body main {
   margin: 5% 0;
   background-image: linear-gradient(rgba(255, 94, 0, 0.6941176471), #ff863f);
 }
-body .input {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  margin-bottom: 10%;
-}
-body input {
-  padding: 1% 10%;
-  margin: 2% 0;
-}
 body #submitButton {
   background-color: #2b62f7;
 }
@@ -67,17 +57,16 @@ body #add-expense:active {
   background-color: #5a5f67;
 }
 
-table {
-  min-height: 100%;
-  min-width: 100%;
-}
 table td {
   border: 1px solid white;
   border-radius: 5px;
   text-align: center;
-  padding: 5%;
+  padding-top: 7.5%;
+  padding-bottom: 7.5%;
 }
 table input {
+  padding: 1% 5%;
+  margin: 2% 0;
   border-radius: 10px;
   border: none;
 }/*# sourceMappingURL=styles.css.map */
