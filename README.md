@@ -7,3 +7,5 @@ I built this project using HTML, SASS and JavaScript. For JavaScript, I made sur
 The tracker does not accept any symbols, only numbers. 
 
 Upon first glance, the left hand side is for typing income and adding income table data cells, the right hand side for typing expenses and adding expense table data cells.
+
+Link to the deployed app: https://main.d2pqbrbcej64dq.amplifyapp.com/
