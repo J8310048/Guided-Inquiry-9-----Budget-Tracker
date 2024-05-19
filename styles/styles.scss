@@ -8,15 +8,18 @@ $primaryColor: #002379;
 $secondaryColor: #f8fdf5;
 $submit-button-color1: #2b62f7;
 $submit-button-color2: #7395f2;
+$submit-button-color3: #cfdcff;
 $reset-button-color1: #d3dcec;
 $reset-button-color2: #5a5f67;
+$reset-button-color3: #c3c8d1;
 
-
+//this puts elements in a flex row
 @mixin flexRow {
     display: flex;
     flex-direction: row;
 }
 
+//this puts elements in a flex column
 @mixin flexColumn {
     display: flex;
     justify-content: center;
@@ -24,74 +27,108 @@ $reset-button-color2: #5a5f67;
     align-items: center;
 }
 
+//this sets a gradient color for the background
 @mixin gradient {
     background-image: linear-gradient(#FFFAE6, #FF9F66, #FF5F00);
     background-repeat: no-repeat
 }
 
+//this sets a styling for the buttons. There's no color here.
 @mixin buttonStyle {
     padding: 5% 20%;
     border-radius: 40px;
     border: 1px solid black;
 }
 
+//this sets an animation for the elements to fade in from the left
+@mixin animation {
+    animation: fadeInLeft;
+    animation-duration: 1s;
+}
+
+// this sets an animation for the background of the table to fadeIn from its current position
+@mixin animation2nd {
+    animation: fadeIn;
+    animation-duration: 2s;
+}
 
 
+// here I'm setting the background to the gradient mixin
 html {
     @include gradient();
     padding: 10% 0;
 }
 
+//I set the "Budget Tracker" header to this animation fixin
+h1 {
+    @include animation();
+}
 
-
+// this sets the table into a column while giving the text color the $primaryColor variable
 body {
     @include flexColumn();
     color: $primaryColor;
 
+    //this sets the table to have a background gradient and giving it a white border on all table data cells
     main {
         border: 1px solid white;
         margin: 5% 0;
         background-image: linear-gradient(#ff5e00b1, #ff863f);
+        @include animation2nd();
     }
 
+    //this is the color for the submit button
     #submitButton {
         background-color: $submit-button-color1;
     }
 
+    //this is when the cursor hovers over the submit button
     #submitButton:hover {
         background-color: $submit-button-color2;
     }
 
+    //this is when the button is clicked
+    #submitButton:active {
+        background-color: $submit-button-color3;
+    }
+
+    //this is the color for the reset button 
     #resetButton {
         background-color: $reset-button-color1;
     }
 
+    //this is when the cursor hovers over the submit button
     #resetButton:hover {
         background-color: $reset-button-color2;
     }
 
+    //this is when the button is clicked
+    #resetButton:active {
+        background-color: $reset-button-color3;
+    }
 
+    //I'm setting both buttons with the buttonStyle mixin to give them uniform border radius
     #resetButton,
     #submitButton {
         @include buttonStyle();
     }
 
-    .submit-reset {
-        @include flexRow();
-    }
-
+    //this is the hover color for the Add + button for income
     #add-income:hover {
         background-color: $reset-button-color1;
     }
 
+    //this is when the button is clicked
     #add-income:active {
         background-color: $reset-button-color2;
     }
 
+    //this is the hover color for the Add + button for expense
     #add-expense:hover {
         background-color: $reset-button-color1;
     }
 
+    //this is when the button is clicked
     #add-expense:active {
         background-color: $reset-button-color2;
     }
@@ -99,15 +136,17 @@ body {
 
 table {
 
-
+    // here I'm giving all the table data cells a border and fadeIn animation
     td {
         border: 1px solid white;
         border-radius: 5px;
         text-align: center;
         padding-top: 7.5%;
         padding-bottom: 7.5%;
+        @include animation();
     }
 
+    //here I'm giving both income and expense inputs some spacing with a border radius
     input {
         padding: 1% 5%;
         margin: 2% 0;
@@ -115,4 +154,9 @@ table {
         border: none;
     }
 
+}
+
+//this gives the copyright at the bottom a fadeIn animation
+footer {
+    @include animation();
 }

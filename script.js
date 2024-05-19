@@ -7,14 +7,17 @@ class Budget {
         this.total = 0;
     }
 
+    //this basically means that any numbers all numbers will be added and assigned to the income variable
     addingIncome(income) {
         this.income += income;
     }
 
+    //this basically means that any numbers all numbers will be added and assigned to the expense variable
     addingExpense(expense) {
         this.expense += expense;
     }
 
+    //this is responsible for calulaing income and expenses
     grandTotal() {
         return this.total = this.income - this.expense
     }
