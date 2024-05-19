@@ -4,22 +4,31 @@
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-main {
-  position: relative;
-  margin: 0 20%;
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
 }
-main .input {
+body .input {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
   margin-bottom: 10%;
 }
-main input {
+body input {
   padding: 1% 10%;
   margin: 2% 0;
 }
-main button {
-  padding: 1% 5%;
+body #resetButton,
+body #submitButton {
+  padding: 5% 20%;
+  border-radius: 40px;
+  border: 1px solid black;
+}
+body .submit-reset {
+  display: flex;
+  flex-direction: row;
 }
 
 table {

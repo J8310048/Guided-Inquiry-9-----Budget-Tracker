@@ -4,18 +4,33 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
+$background-color1: #0026fd44;
+$background-color2: #f8fdf5;
+$submit-button-color1: #2b62f7;
+$submit-button-color2: #7395f2;
+$reset-button-color1: #d3dcec;
+$reset-button-color2: #5a5f67;
+
+@mixin animations {}
+
 @mixin hoverEffect {
-    background-color: rgba(0, 0, 0, 0.179);
-    border-radius: 5px;
-    padding: 10px;
+    background-color: $submit-button-color2;
+}
+
+@mixin flexRow {
+    display: flex;
+    flex-direction: row;
 }
 
 
-main {
+body {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
 
     .input {
-        display: flex;
-        flex-direction: row;
+        @include flexRow();
         justify-content: space-evenly;
         margin-bottom: 10%;
     }
@@ -25,13 +40,16 @@ main {
         margin: 2% 0;
     }
 
-    button {
-        padding: 1% 5%;
+
+    #resetButton,
+    #submitButton {
+        padding: 5% 20%;
+        border-radius: 40px;
+        border: 1px solid black;
     }
 
     .submit-reset {
-        display: flex;
-        flex-direction: row;
+        @include flexRow();
     }
 }
 
@@ -47,10 +65,5 @@ table {
         padding: 5%;
     }
 
-    #currentRow {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
 
 }

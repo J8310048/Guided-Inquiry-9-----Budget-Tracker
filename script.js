@@ -92,9 +92,8 @@ function addIncomeInput() {
     const newRow = document.createElement('tr');
     var incomeCell = document.createElement('td');
     incomeCell.innerHTML =
-        `<input type="text" id="income-description" name="income-description"
-                            placeholder="Name your income">
-                        <input type="text" id="income-number" name="income-number" placeholder="type the amount">`
+        `<input type="text" id="income-description" name="income-description" placeholder="Name your income">
+         <input type="text" id="income-number" name="income-number" placeholder="type the amount">`
     newRow.appendChild(incomeCell);
     incomeTable.appendChild(newRow)
 }
@@ -105,9 +104,8 @@ function addExpenseInput() {
     const newRow = document.createElement('tr');
     var expenseCell = document.createElement('td');
     expenseCell.innerHTML = `
-    <input type="text" id="expenses-description" name="expenses-description"
-    placeholder="Name your expense">
-<input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">`;
+    <input type="text" id="expenses-description" name="expenses-description" placeholder="Name your expense">
+    <input type="text" id="expenses-number" name="expenses-number" placeholder="type the amount">`;
     newRow.appendChild(expenseCell);
     expenseTable.appendChild(newRow)
 }
